@@ -12,6 +12,9 @@
 			//Write your code here
 			if(arr.length == 1) return -Infinity;
 
+			if(allSame(arr)) return -Infinity;
+
+
 			  let max = -Infinity, secMax = -Infinity;
 			  for (let i = 0; i < arr.length; i++) {
 			    if(arr[i] > max) {
@@ -23,6 +26,12 @@
 			  }
 			  return secMax;
 		}
+		function allSame(arr) {
+  for (let i = 0; i < arr.length-1; i++) {
+    if(arr[i] != arr[i+1]) return false;
+  }
+  return true;
+}
 
 		function Main() {
 			var n = prompt("Enter the number of elements");
